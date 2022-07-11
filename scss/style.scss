@@ -1,0 +1,296 @@
+@use "sass:math";
+// IMPORTS
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&display=swap");
+
+// VARIABLES
+// ////// COLORS ////////////
+$bg-color: rgba(247, 233, 220, 255);
+$soft-red: hsl(10, 79%, 65%);
+$soft-red-hover: rgba(255, 155, 135, 255);
+$cyan: hsl(186, 34%, 60%);
+$cyan-hover: rgba(180, 223, 229, 255);
+$dark-brown: hsl(25, 47%, 15%);
+$medium-brown: hsl(28, 10%, 53%);
+$cream: hsl(27, 66%, 92%);
+$very-pale-orange: hsl(33, 100%, 98%);
+
+// /////////////TYPOGRAPHY
+
+$font-size: 18px;
+$font-size2: 15px;
+$font-family: "DM Sans", sans-serif;
+$font-weight1: 500;
+$font-weight2: 700;
+$border-radius: 10px;
+
+// styles
+* {
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+body {
+  background: $bg-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+// BALANCE CONTAINER START
+#outer-balance-container {
+  border-radius: $border-radius;
+  padding: 0;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+
+  #inner-balance-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    margin: 0;
+    background: $soft-red;
+  }
+
+  #text {
+    margin-bottom: 0.5rem;
+    font-size: $font-size;
+    font-weight: $font-weight1;
+    color: $cream;
+  }
+
+  #money {
+    font-weight: $font-weight2;
+    font-size: $font-size * 1.8;
+    color: $cream;
+  }
+}
+
+// BALANCE CONTAINER END
+
+// CHART START
+#outer-chart-container {
+  border-radius: $border-radius;
+  padding: 0;
+  overflow: hidden;
+
+  #inner-chart-container {
+    margin: 0;
+    padding: 1rem 2rem;
+    background-color: $very-pale-orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    #header {
+      font-size: $font-size * 2;
+      font-weight: $font-weight2;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    #charts {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .chart {
+      width: math.div(100%, 7);
+      display: flex;
+      flex-direction: column-reverse;
+      text-align: center;
+      align-content: center;
+    }
+
+    .value {
+      font-size: $font-size;
+      font-weight: $font-weight1;
+      color: $very-pale-orange;
+      background-color: $dark-brown;
+      width: 100%;
+      padding: 0.5rem 0;
+      border-radius: math.div($border-radius, 3);
+      overflow: hidden;
+      margin-bottom: 0.7rem;
+      visibility: hidden;
+    }
+
+    .chart-body {
+      background-color: $soft-red;
+      border-radius: math.div($border-radius, 3);
+      margin: 0 0.5rem;
+
+      &:hover {
+        background-color: $soft-red-hover;
+        cursor: pointer;
+      }
+
+      &:hover + .value {
+        visibility: visible;
+      }
+    }
+
+    .week-day {
+      opacity: 0.5;
+      font-size: $font-size;
+      font-weight: $font-weight1;
+      margin-top: 0.5rem;
+    }
+
+    .active {
+      background-color: $cyan;
+
+      &:hover {
+        background-color: $cyan-hover;
+      }
+    }
+  }
+}
+
+// CHART END
+
+// INFO START
+#info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+
+  #total {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #total-text {
+    opacity: 0.5;
+    font-size: $font-size;
+    font-weight: $font-weight1;
+  }
+
+  #total-money {
+    color: $dark-brown;
+    font-size: $font-size * 2.5;
+    font-weight: $font-weight2;
+    margin-top: 0.2rem;
+  }
+
+  #percent-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: -1rem;
+  }
+
+  #percent {
+    font-size: $font-size;
+    font-weight: $font-weight2;
+    text-align: right;
+  }
+
+  #percent-text {
+    font-size: $font-size;
+    font-weight: $font-weight1;
+    opacity: 0.5;
+  }
+}
+
+// INFO END
+
+// MEDIAQUERY
+
+// 1025px ===> 1200px: Desktops, large screens
+
+@media screen and (max-width: 1200px) and (min-width: 1025px) {
+  .container {
+    width: 50%;
+  }
+  #total-money {
+    font-size: $font-size * 2.4 !important;
+  }
+}
+
+// 769px ===> 1024px: Small screens, laptops
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .container {
+    width: 60%;
+  }
+  #money {
+    font-size: $font-size * 1.7;
+  }
+  #header {
+    font-size: $font-size * 1.9;
+  }
+  #total-money {
+    font-size: $font-size * 2.3;
+  }
+}
+
+// 481px ===>768px: iPads, Tablets
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  .container {
+    width: 80%;
+  }
+  #money {
+    font-size: $font-size * 1.5 !important;
+  }
+  #header {
+    font-size: $font-size * 1.8 !important;
+  }
+  #total-money {
+    font-size: $font-size * 2.2 !important;
+  }
+
+  #inner-chart-container {
+    padding: 1rem 1.8rem !important;
+  }
+}
+
+// 320px ===> 480px: Mobile devices
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  .container {
+    width: 95%;
+  }
+
+  #text {
+    font-size: $font-size2 !important;
+  }
+  #money {
+    font-size: $font-size * 1.4 !important;
+  }
+  #header {
+    font-size: $font-size * 1.6 !important;
+  }
+  #total-money {
+    font-size: $font-size * 2.1 !important;
+  }
+  #outer-balance-container {
+    margin-bottom: 1rem;
+  }
+  #inner-balance-container {
+    padding: 1.2rem 1.5rem !important;
+  }
+
+  #inner-chart-container {
+    padding: 1.5rem 1.8rem !important;
+  }
+
+  .week-day {
+    font-size: $font-size2;
+  }
+
+  .value {
+    font-size: 0.8rem !important;
+  }
+}
