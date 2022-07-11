@@ -35,9 +35,13 @@ const jsonData = [
 
 // functions
 const getData = async (url) => {
-  let datawait = await fetch(url);
-  let data = await datawait.json();
-  return data;
+  try {
+    let datawait = await fetch(url);
+    let data = await datawait.json();
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 const buildChart = (chart, height, barClass = "") =>
@@ -58,6 +62,7 @@ const barClass = (day) => {
 
 const charts = async () => {
   const data = (await getData("../data.json")) || jsonData;
+  console.log(data);
   const elems = data.map((elem) => {
     let barActiveClass = barClass(elem.day);
     let height = heightCount(elem.amount);
