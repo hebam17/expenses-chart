@@ -18,6 +18,26 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 1200px) and (min-width: 1025px) {
+  .container {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .container {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  .container {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  .container {
+    width: 95%;
+  }
+}
 
 #outer-balance-container {
   border-radius: 10px;
@@ -25,6 +45,11 @@ body {
   overflow: hidden;
   margin-bottom: 1.5rem;
   box-sizing: border-box;
+}
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  #outer-balance-container {
+    margin-bottom: 1rem;
+  }
 }
 #outer-balance-container #inner-balance-container {
   display: flex;
@@ -34,16 +59,41 @@ body {
   margin: 0;
   background: hsl(10deg, 79%, 65%);
 }
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  #outer-balance-container #inner-balance-container {
+    padding: 1.2rem 1.5rem;
+  }
+}
 #outer-balance-container #text {
   margin-bottom: 0.5rem;
   font-size: 18px;
   font-weight: 500;
   color: hsl(27deg, 66%, 92%);
 }
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  #outer-balance-container #text {
+    font-size: 15px;
+  }
+}
 #outer-balance-container #money {
   font-weight: 700;
   font-size: 32.4px;
   color: hsl(27deg, 66%, 92%);
+}
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  #outer-balance-container #money {
+    font-size: 30.6px;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  #outer-balance-container #money {
+    font-size: 27px;
+  }
+}
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  #outer-balance-container #money {
+    font-size: 25.2px;
+  }
 }
 
 #outer-chart-container {
@@ -59,11 +109,36 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  #outer-chart-container #inner-chart-container {
+    padding: 1rem 1.8rem;
+  }
+}
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  #outer-chart-container #inner-chart-container {
+    padding: 1.5rem 1.8rem;
+  }
+}
 #outer-chart-container #inner-chart-container #header {
   font-size: 36px;
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 1rem;
+}
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  #outer-chart-container #inner-chart-container #header {
+    font-size: 34.2px;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  #outer-chart-container #inner-chart-container #header {
+    font-size: 32.4px;
+  }
+}
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  #outer-chart-container #inner-chart-container #header {
+    font-size: 28.8px;
+  }
 }
 #outer-chart-container #inner-chart-container #charts {
   display: flex;
@@ -90,6 +165,11 @@ body {
   margin-bottom: 0.7rem;
   visibility: hidden;
 }
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  #outer-chart-container #inner-chart-container .value {
+    font-size: 0.8rem;
+  }
+}
 #outer-chart-container #inner-chart-container .chart-body {
   background-color: hsl(10deg, 79%, 65%);
   border-radius: 3.3333333333px;
@@ -107,6 +187,11 @@ body {
   font-size: 18px;
   font-weight: 500;
   margin-top: 0.5rem;
+}
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  #outer-chart-container #inner-chart-container .week-day {
+    font-size: 15px;
+  }
 }
 #outer-chart-container #inner-chart-container .active {
   background-color: hsl(186deg, 34%, 60%);
@@ -131,17 +216,49 @@ body {
   font-size: 18px;
   font-weight: 500;
 }
+@media screen and (max-width: 480px) {
+  #info #total-text {
+    font-size: 15px;
+  }
+}
 #info #total-money {
   color: hsl(25deg, 47%, 15%);
   font-size: 45px;
   font-weight: 700;
   margin-top: 0.2rem;
 }
+@media screen and (max-width: 1200px) and (min-width: 1025px) {
+  #info #total-money {
+    font-size: 43.2px;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  #info #total-money {
+    font-size: 41.4px;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  #info #total-money {
+    font-size: 39.6px;
+  }
+}
+@media screen and (max-width: 480px) {
+  #info #total-money {
+    font-size: 36px;
+  }
+}
 #info #percent-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   margin-bottom: -1rem;
+}
+@media screen and (max-width: 480px) {
+  #info #percent-container {
+    margin-bottom: 0;
+    align-items: center;
+    text-align: center;
+  }
 }
 #info #percent {
   font-size: 18px;
@@ -153,75 +270,8 @@ body {
   font-weight: 500;
   opacity: 0.5;
 }
-
-@media screen and (max-width: 1200px) and (min-width: 1025px) {
-  .container {
-    width: 50%;
-  }
-  #total-money {
-    font-size: 43.2px !important;
-  }
-}
-@media screen and (max-width: 1024px) and (min-width: 769px) {
-  .container {
-    width: 60%;
-  }
-  #money {
-    font-size: 30.6px;
-  }
-  #header {
-    font-size: 34.2px;
-  }
-  #total-money {
-    font-size: 41.4px;
-  }
-}
-@media screen and (max-width: 768px) and (min-width: 481px) {
-  .container {
-    width: 80%;
-  }
-  #money {
-    font-size: 27px !important;
-  }
-  #header {
-    font-size: 32.4px !important;
-  }
-  #total-money {
-    font-size: 39.6px !important;
-  }
-  #inner-chart-container {
-    padding: 1rem 1.8rem !important;
-  }
-}
-@media screen and (max-width: 480px) and (min-width: 320px) {
-  .container {
-    width: 95%;
-  }
-  #text {
-    font-size: 15px !important;
-  }
-  #money {
-    font-size: 25.2px !important;
-  }
-  #header {
-    font-size: 28.8px !important;
-  }
-  #total-money {
-    font-size: 37.8px !important;
-  }
-  #outer-balance-container {
-    margin-bottom: 1rem;
-  }
-  #inner-balance-container {
-    padding: 1.2rem 1.5rem !important;
-  }
-  #inner-chart-container {
-    padding: 1.5rem 1.8rem !important;
-  }
-  .week-day {
+@media screen and (max-width: 480px) {
+  #info #percent-text {
     font-size: 15px;
-  }
-  .value {
-    font-size: 0.8rem !important;
   }
 }/*# sourceMappingURL=style.css.map */
