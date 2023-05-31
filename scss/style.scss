@@ -30,35 +30,31 @@ $border-radius: 10px;
 }
 body {
   background: $bg-color;
+  // overflow: auto;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  overflow: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  overflow-y: auto;
 }
 
 .container {
-  width: 40%;
+  max-width: 70%;
   display: flex;
   flex-direction: column;
 
-  @media screen and (max-width: 1200px) and (min-width: 1025px) {
-    width: 50%;
-  }
-
   // 769px ===> 1024px: Small screens, laptops
   @media screen and (max-width: 1024px) and (min-width: 769px) {
-    width: 60%;
-  }
-
-  // 481px ===>768px: iPads, Tablets
-  @media screen and (max-width: 768px) and (min-width: 481px) {
-    width: 80%;
+    max-width: 80%;
   }
 
   // 320px ===> 480px: Mobile devices
-  @media screen and (max-width: 480px) and (min-width: 320px) {
-    width: 95%;
+  @media screen and (max-width: 480px) {
+    max-width: 95%;
   }
 }
 

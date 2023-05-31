@@ -61,8 +61,11 @@ const barClass = (day) => {
 };
 
 const charts = async () => {
+  // you can use this to get data from external api
+  // const data = (await getData(url)) || jsonData;
+
+  // but we will use local data here
   const data = (await getData("../data.json")) || jsonData;
-  console.log(data);
   const elems = data.map((elem) => {
     let barActiveClass = barClass(elem.day);
     let height = heightCount(elem.amount);

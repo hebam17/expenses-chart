@@ -6,36 +6,30 @@
 
 body {
   background: rgb(247, 233, 220);
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  overflow: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  overflow-y: auto;
 }
 
 .container {
-  width: 40%;
+  max-width: 70%;
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width: 1200px) and (min-width: 1025px) {
-  .container {
-    width: 50%;
-  }
-}
 @media screen and (max-width: 1024px) and (min-width: 769px) {
   .container {
-    width: 60%;
+    max-width: 80%;
   }
 }
-@media screen and (max-width: 768px) and (min-width: 481px) {
+@media screen and (max-width: 480px) {
   .container {
-    width: 80%;
-  }
-}
-@media screen and (max-width: 480px) and (min-width: 320px) {
-  .container {
-    width: 95%;
+    max-width: 95%;
   }
 }
 
@@ -57,7 +51,7 @@ body {
   align-items: center;
   padding: 1.5rem;
   margin: 0;
-  background: hsl(10deg, 79%, 65%);
+  background: hsl(10, 79%, 65%);
 }
 @media screen and (max-width: 480px) and (min-width: 320px) {
   #outer-balance-container #inner-balance-container {
@@ -68,7 +62,7 @@ body {
   margin-bottom: 0.5rem;
   font-size: 18px;
   font-weight: 500;
-  color: hsl(27deg, 66%, 92%);
+  color: hsl(27, 66%, 92%);
 }
 @media screen and (max-width: 480px) and (min-width: 320px) {
   #outer-balance-container #text {
@@ -78,7 +72,7 @@ body {
 #outer-balance-container #money {
   font-weight: 700;
   font-size: 32.4px;
-  color: hsl(27deg, 66%, 92%);
+  color: hsl(27, 66%, 92%);
 }
 @media screen and (max-width: 1024px) and (min-width: 769px) {
   #outer-balance-container #money {
@@ -104,7 +98,7 @@ body {
 #outer-chart-container #inner-chart-container {
   margin: 0;
   padding: 1rem 2rem;
-  background-color: hsl(33deg, 100%, 98%);
+  background-color: hsl(33, 100%, 98%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -156,8 +150,8 @@ body {
 #outer-chart-container #inner-chart-container .value {
   font-size: 18px;
   font-weight: 500;
-  color: hsl(33deg, 100%, 98%);
-  background-color: hsl(25deg, 47%, 15%);
+  color: hsl(33, 100%, 98%);
+  background-color: hsl(25, 47%, 15%);
   width: 100%;
   padding: 0.5rem 0;
   border-radius: 3.3333333333px;
@@ -171,7 +165,7 @@ body {
   }
 }
 #outer-chart-container #inner-chart-container .chart-body {
-  background-color: hsl(10deg, 79%, 65%);
+  background-color: hsl(10, 79%, 65%);
   border-radius: 3.3333333333px;
   margin: 0 0.5rem;
 }
@@ -194,7 +188,7 @@ body {
   }
 }
 #outer-chart-container #inner-chart-container .active {
-  background-color: hsl(186deg, 34%, 60%);
+  background-color: hsl(186, 34%, 60%);
 }
 #outer-chart-container #inner-chart-container .active:hover {
   background-color: rgb(180, 223, 229);
@@ -222,7 +216,7 @@ body {
   }
 }
 #info #total-money {
-  color: hsl(25deg, 47%, 15%);
+  color: hsl(25, 47%, 15%);
   font-size: 45px;
   font-weight: 700;
   margin-top: 0.2rem;
